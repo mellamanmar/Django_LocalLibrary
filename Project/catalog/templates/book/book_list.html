@@ -1,0 +1,12 @@
+<h1> Books </h1>
+
+{% block content %}
+{% if book.title = 'wizard' %}
+<ul>
+    {% for book in book_list %}
+    <li> {{book.tilte}} </li>
+    
+    {% endfor %}
+{% endif %}
+
+{% endblock content %}

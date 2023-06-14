@@ -1,0 +1,12 @@
+<h1> Genres </h1>
+
+{% block content %}
+{% if genre_list %}
+<ul>
+    {% for genre in genre_list %}
+    <li> {{genre.name}} </li>
+    
+    {% endfor %}
+{% endif %}
+
+{% endblock content %}
