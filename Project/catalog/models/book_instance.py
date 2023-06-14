@@ -1,5 +1,6 @@
 import uuid # Requerida para las instancias de libros únicos
 from django.db import models
+from .language import Language
 
 class BookInstance(models.Model):
     """Model representing a specific copy of a book (i.e. that can be borrowed from the library)."""
@@ -7,7 +8,8 @@ class BookInstance(models.Model):
     book = models.ForeignKey('Book', on_delete=models.RESTRICT, null=True)
     imprint = models.CharField(max_length=200)
     due_back = models.DateField(null=True, blank=True)
-
+    language= models.ManyToManyField(Language, help_text="Seleccione un idioma para este libro")
+    
     LOAN_STATUS = (
         ('m', 'Maintenance'),
         ('o', 'On loan'),
@@ -29,3 +31,7 @@ class BookInstance(models.Model):
     def __str__(self):
         """String for representing the Model object."""
         return f'{self.id} ({self.book.title})'
+    
+    def display_language(self):
+        return ', '.join([ language.name for language in self.language.all()[:3] ]) 
+    display_language.short_description = 'Language'
