@@ -1,0 +1,15 @@
+<h1> Books </h1>
+
+{%block content%}
+{% if wild_books %}
+
+<ul>
+    {% for book in wild_books %}
+    {{book.title}}
+    {% endfor %}
+</ul>
+
+{% else %}
+<h3> There aren't books </h3>
+{% endif %}
+{%endblock content%}

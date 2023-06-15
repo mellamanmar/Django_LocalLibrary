@@ -6,7 +6,6 @@ from ..models.author import Author
 from ..models.genre import  Genre
 from ..models.book import Book
 from ..models.book_instance import BookInstance
-from ..models.language import Language
 
 def index(request):
     num_books=Book.objects.all().count()

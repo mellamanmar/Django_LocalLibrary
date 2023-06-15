@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import views
-from .views import genre, book
+from .views import book, views
+from .views import genre
 
 
 urlpatterns= [
@@ -9,6 +9,10 @@ urlpatterns= [
 
 urlpatterns+=[
     path ("genre", genre.GenreListView.as_view(), name= 'genre_list'),
-    path ("book", book.GenreListView.as_view(), name= 'book_list')
+]
 
+urlpatterns +=[
+    path ('bookwild', book.book_list, name= 'book_wild'),
+    path ('book/<int:pk>', book.BookDetailView.as_view(), name= 'book_detail'),
+    
 ]
