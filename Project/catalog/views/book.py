@@ -1,17 +1,8 @@
 from ..models.book import Book
-from ..models.language import Language
+from ..models.book_instance import BookInstance
 from django.shortcuts import render
 from django.views import generic
 
-
-# def book_list(request):
-#     wild_books= Book.objects.filter(title__contains='wild').all()
-
-#     return render(
-#         request,
-#         'book/book_wild.html',
-#         context= {'wild_books': wild_books }
-    # )
 
 class BookListView(generic.ListView):
     model = Book
@@ -22,18 +13,13 @@ class BookListView(generic.ListView):
 
 
 class BookDetailView(generic.DetailView):
-    model= Book, Language
+    model= Book
     paginate_by = 5
     context_object_name= 'book_detail'
     template_name = "book/book_detail.html"
 
-# def book_detail (request, pk):
-#     detail= Book.objects.all()
-#     language_book= Language.objects.all()
-#     return render (request, 'book/book_detail.html', context= {'detail': detail, 'language_book': language_book})
-    
-
-# class StatusListView(generic.ListView):
-#     model= BookInstance
-#     context_object_name= 'book_status'
-#     template_name= "book/book_detail.html"
+class Book_allListView(generic.ListView):
+    model = Book
+    paginate_by = 5
+    context_object_name = 'all_book'   # your own name for the list as a template variable
+    template_name = 'book/all_book.html'  # Specify your own template name/locati

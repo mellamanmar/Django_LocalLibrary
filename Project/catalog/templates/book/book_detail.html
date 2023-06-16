@@ -1,15 +1,14 @@
 {% block content %}
-<h1> Book Details {{book_detail}}</h1>
+<h1> Book Details of {{book_detail}}</h1>
 
 
-<h1>Title: {{ book_detail.title}}</h1>
-  <p><strong>Author:</strong> {{ book_detail.author }}</p>
+<h3>Title: {{ book_detail.title}}</h3>
+  <p><strong>Id:</strong> {{ book_detail.author_book }}</p>
   <p><strong>Summary:</strong> {{book_detail.summary }}</p>
   <p><strong>ISBN:</strong> {{book_detail.isbn }}</p>
-  <p><strong>Language:</strong> {{book_detail.language }}</p>
   <p><strong>Genre:</strong> {% for genre in book_detail.genre.all %} {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
 
-  {% comment %} <div style="margin-left:20px;margin-top:20px">
+  <div style="margin-left:20px;margin-top:20px">
     <h4>Copies</h4>
 
     {% for copy in book.bookinstance_set.all %}
@@ -19,5 +18,5 @@
     <p><strong>Imprint:</strong> {{copy.imprint}}</p>
     <p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
     {% endfor %}
-  </div> {% endcomment %}
+  </div>
   {% endblock content %}

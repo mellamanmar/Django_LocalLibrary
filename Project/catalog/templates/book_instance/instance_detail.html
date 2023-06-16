@@ -1,0 +1,11 @@
+<h1> Book Details of Book Instances </h1>
+{% block content %}
+<h1> Book Details of {{book_detail}}</h1>
+
+
+<h3>Book: {{ instance_detail.book}}</h3>
+  <p><strong>ID:</strong> {{ instance_detail.id }}</p>
+  <p><strong>Imprint:</strong> {{instance_detail.imprint }}</p>
+  <p><strong>due_back:</strong> {{instance_detail.due_back }}</p>
+  <p><strong>Language:</strong> {{instance_detail.language}}
+{% endblock content %}

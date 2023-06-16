@@ -1,6 +1,8 @@
 import uuid # Requerida para las instancias de libros únicos
 from django.db import models
 from .language import Language
+from django.urls import reverse
+
 
 class BookInstance(models.Model):
     """Model representing a specific copy of a book (i.e. that can be borrowed from the library)."""
@@ -35,3 +37,7 @@ class BookInstance(models.Model):
     def display_language(self):
         return ', '.join([ language.name for language in self.language.all()[:3] ]) 
     display_language.short_description = 'Language'
+
+    def get_absolute_url(self):
+        """Returns the URL to access a particular author instance."""
+        return reverse('instance_detail', args=[str(self.id)])

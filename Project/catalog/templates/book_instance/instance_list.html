@@ -1,0 +1,17 @@
+{% block content %}
+    <h1>Book List</h1>
+
+    {% if instance_list %}
+    <ul>
+
+      {% for book_instance in instance_list %}
+      <li>
+        <a href="{{instance_list.get_absolute_url}}"> {{ book_instance.book }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no copies yet.</p>
+    {% endif %}
+{% endblock %}

@@ -1,12 +1,12 @@
 {% block content %}
-    <h1>Book List</h1>
+    <h1>All Books</h1>
 
-    {% if book_list %}
+    {% if all_book %}
     <ul>
 
-      {% for book in book_list %}
+      {% for book in all_book %}
       <li>
-        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
+        <p><a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})</p>
       </li>
       {% endfor %}
 
