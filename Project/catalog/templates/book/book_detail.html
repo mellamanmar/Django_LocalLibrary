@@ -1,12 +1,11 @@
 <h1> Book Details {{book_detail}}</h1>
 
-{% block content %}
 
-  <h1>Title: {{ book_detail.book.title }}</h1>
-  <p><strong>Author:</strong> <a href="">{{ book_detail.book.author }}</a></p> <!-- author detail link not yet defined -->
-  <p><strong>Summary:</strong> {{ book_detail.book.summary }}</p>
-  <p><strong>ISBN:</strong> {{ book_detail.book.isbn }}</p>
-  <p><strong>Language:</strong> {{ book_detail.language.language }}</p>
+<h1>Title: {{ book_detail.book.title }}</h1>
+  <p><strong>Author:</strong> {{book_detail.author.author}}</p> <!-- author detail link not yet defined -->
+  <p><strong>Summary:</strong> {{book_detail.book.summary }}</p>
+  <p><strong>ISBN:</strong> {{book_detail.book.isbn }}</p>
+  <p><strong>Language:</strong> {{book_detail.language.language }}</p>
   <p><strong>Genre:</strong> {% for genre in book.genre.all %} {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
 
   <div style="margin-left:20px;margin-top:20px">
@@ -20,4 +19,3 @@
     <p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
     {% endfor %}
   </div>
-{% endblock %}

@@ -12,7 +12,8 @@ urlpatterns+=[
 ]
 
 urlpatterns +=[
-    path ('bookwild', book.book_list, name= 'book_wild'),
+    # path ('bookwild', book.book_list, name= 'book_wild'),
+    path ('book', book.BookListView.as_view(), name= 'book_list'),
     path ('book/<int:pk>', book.BookDetailView.as_view(), name= 'book_detail'),
     
 ]
