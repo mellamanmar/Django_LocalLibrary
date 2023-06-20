@@ -1,0 +1,21 @@
+html{
+    background-image: linear-gradient(to left,#42275a, #734b6d)
+}
+
+body {
+    font-size: 20px; 
+    font-family: 'Lato', sans-serif;
+    color:rgb(151, 145, 118);
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 78px;
+    color:hsl(258, 16%, 57%);
+    line-height: 1;
+}
+
+ul {
+    list-style-image: url('image/book.png');
+}
+

@@ -1,17 +1,34 @@
-{% block content %}
-    <h1>Book List</h1>
+<html>
+  <head>
 
-    {% if instance_list %}
-    <ul>
 
-      {% for book_instance in instance_list %}
-      <li>
-        <a href="{{instance_list.get_absolute_url}}"> {{ book_instance.book }}</a>
-      </li>
-      {% endfor %}
+    {% load static %}
+    <link rel= "stylesheet" href="{%static 'catalog/style_list.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet" type="text/css">
 
-    </ul>
-    {% else %}
-      <p>There are no copies yet.</p>
-    {% endif %}
-{% endblock %}
+  <title> Book Details of Book Instances </title>
+  <h1>Book List</h1>
+  <img src= 'image/library.jpg'/>
+
+    <body>
+      {% block content %}
+
+        {% if instance_list %}
+          <ul>
+
+            {% for book_instance in instance_list %}
+              <li>
+                <a href="{{instance_list.get_absolute_url}}"> {{ book_instance.book }}</a>
+              </li>
+            {% endfor %}
+
+          </ul>
+        {% else %}
+        <p>There are no copies yet.</p>
+        {% endif %}
+      {% endblock %}
+
+    </body>
+
+  </header>
+</html>

@@ -1,17 +1,34 @@
-{% block content %}
+<html>
+
+  <head>
+
+    {% load static %}
+    <link rel= "stylesheet" href="{%static 'catalog/style_list.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet" type="text/css">
+
+    {% block content %}
     <h1>All Books</h1>
 
-    {% if all_book %}
-    <ul>
+    <body>
 
-      {% for book in all_book %}
-      <li>
-        <p><a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})</p>
-      </li>
-      {% endfor %}
+      {% if all_book %}
+        <ul>
 
-    </ul>
-    {% else %}
-      <p>There are no books in the library.</p>
-    {% endif %}
-{% endblock %}
+          {% for book in all_book %}
+            <li>
+              <p><a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})</p>
+            </li>
+          {% endfor %}
+
+        </ul>
+      {% else %}
+        <p>There are no books in the library.</p>
+      {% endif %}
+
+      </body>
+
+    {% endblock %}
+  
+  </header>
+
+</html>

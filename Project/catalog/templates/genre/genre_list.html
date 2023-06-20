@@ -1,12 +1,27 @@
-<h1> Genres </h1>
+<html>
 
-{% block content %}
-{% if genre_list %}
-<ul>
-    {% for genre in genre_list %}
-    <li> {{genre.name}} </li>
+  <head>
+
+        {% load static %}
+        <link rel= "stylesheet" href="{%static 'catalog/style_list.css'%}">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet" type="text/css">
+        {% block content %}
+        <h1> Genres </h1>
+        <body>
+
+            {% if genre_list %}
+                <ul>
+                    {% for genre in genre_list %}
+                        <li> {{genre.name}} </li>
     
-    {% endfor %}
-{% endif %}
+                    {% endfor %}
+            
+                </ul>
+            {% endif %}
+    
+        </body>
 
-{% endblock content %}
+        {% endblock content %}
+    </header>
+
+</html> 
