@@ -1,3 +1,9 @@
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
 html{
     background-image: linear-gradient(to left,#42275a, #734b6d)
 }
@@ -12,10 +18,10 @@ body {
 h1 {
     font-size: 78px;
     color:hsl(258, 16%, 57%);
-    line-height: 1;
+
 }
 
-ul {
-    list-style-image: url('image/book.png');
-}
+a {
+    text-decoration:none;
+} 
 

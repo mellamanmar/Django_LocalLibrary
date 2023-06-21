@@ -1,27 +1,16 @@
-<html>
+{% extends "base_generic_list.html" %}
 
-  <head>
+{% block content %}
+<h1> Genres </h1>
 
-        {% load static %}
-        <link rel= "stylesheet" href="{%static 'catalog/style_list.css'%}">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet" type="text/css">
-        {% block content %}
-        <h1> Genres </h1>
-        <body>
-
-            {% if genre_list %}
-                <ul>
-                    {% for genre in genre_list %}
-                        <li> {{genre.name}} </li>
+{% if genre_list %}
+    <ul>
+    {% for genre in genre_list %}
+        <li> {{genre.name}} </li>
     
-                    {% endfor %}
+    {% endfor %}
             
-                </ul>
-            {% endif %}
+    </ul>
+{% endif %}
     
-        </body>
-
-        {% endblock content %}
-    </header>
-
-</html> 
+{% endblock content %}

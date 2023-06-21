@@ -6,7 +6,7 @@ from .views import book_instance
 
 
 urlpatterns= [
-    path('', views.index, name= 'index')
+    path('', views.index, name= 'index'),
 ]
 
 urlpatterns+=[

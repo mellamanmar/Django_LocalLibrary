@@ -1,33 +1,20 @@
-<html>
+{% extends "base_generic_list.html" %}
 
-  <head>
+{% block content %}
+  <h1>Author List</h1>
 
-    {% load static %}
-    <link rel= "stylesheet" href="{%static 'catalog/style_list.css'%}">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet" type="text/css">
+  {% if author_list %}
+    <ul>
 
-    {% block content %}
-    <h1>Author List</h1>
+    {% for author in author_list %}
+      <li>
+        <a href="{{author.get_absolute_url}}"> {{author}}</a> {{books_list}}
+      </li>
+    {% endfor %}
 
-    <body>
-
-      {% if author_list %}
-        <ul>
-
-          {% for author in author_list %}
-            <li>
-              <a href="{{author.get_absolute_url}}"> {{author}}</a> {{books_list}}
-            </li>
-          {% endfor %}
-
-        </ul>
-      {% else %}
-        <p>There are no authors yet.</p>
-      {% endif %}
+    </ul>
+  {% else %}
+    <p>There are no authors yet.</p>
+  {% endif %}
     
-    </body>
-    {% endblock %}
-  
-  </header>
-
-</html>
+{% endblock %}
