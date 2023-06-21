@@ -1,17 +1,9 @@
-<html>
-<head>
-
-{% load static %}
-<link rel= "stylesheet" href="{%static 'catalog/style.css'%}">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet" type="text/css">
-
-<title> Book Details of Book Instances </title>
+{% extends "base_generic_detail.html" %}
 
 {% block content %}
 
 <h1> Book Details of {{book_detail}}</h1>
 
-<body>
 <h3>Book: {{ instance_detail.book}}</h3>
   <p><strong>ID:</strong> {{ instance_detail.id }}</p>
   <p><strong>Imprint:</strong> {{instance_detail.imprint }}</p>
@@ -19,6 +11,3 @@
   <p><strong>Language:</strong> {{instance_detail.language}}
   </body>
 {% endblock content %}
-
-  </head>
-  </html>

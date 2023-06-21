@@ -1,6 +1,8 @@
-{% block content %}
-<h1> Book Details of {{book_detail}}</h1>
+{% extends "base_generic_detail.html" %}
 
+{% block content %}
+
+<h1> Book Details of {{book_detail}}</h1>
 
 <h3>Title: {{ book_detail.title}}</h3>
   <p><strong>Id:</strong> {{ book_detail.author_book }}</p>

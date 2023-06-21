@@ -1,0 +1,28 @@
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+body, head{
+    background-image: linear-gradient(to left,#42275a, #734b6d)
+}
+
+body {
+    font-size: 20px; 
+    font-family: 'Lato', sans-serif;
+    color:rgb(172, 167, 148);
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 45px;
+    font-family: 'Raleway', sans-serif;
+    color:hsl(273, 24%, 69%);
+
+}
+
+a {
+    text-decoration:none;
+} 
+

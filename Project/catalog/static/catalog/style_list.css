@@ -4,20 +4,20 @@
     list-style: none;
 }
 
-html{
-    background-image: linear-gradient(to left,#42275a, #734b6d)
+body, head{
+    background-image: linear-gradient(to left,#42275a, #734b6d);
 }
 
 body {
     font-size: 20px; 
     font-family: 'Lato', sans-serif;
-    color:rgb(151, 145, 118);
+    color:rgb(172, 167, 148);
     line-height: 1.5;
 }
 
 h1 {
     font-size: 78px;
-    color:hsl(258, 16%, 57%);
+    color:hsl(273, 24%, 69%);
 
 }
 

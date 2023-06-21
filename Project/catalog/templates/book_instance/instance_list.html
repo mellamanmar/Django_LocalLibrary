@@ -1,34 +1,21 @@
-<html>
-  <head>
+{% extends "base_generic_list.html" %}
 
+{% block content %}
 
-    {% load static %}
-    <link rel= "stylesheet" href="{%static 'catalog/style_list.css'%}">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet" type="text/css">
+<h1>Book List</h1>
+<img src= 'image/library.jpg'/>
 
-  <title> Book Details of Book Instances </title>
-  <h1>Book List</h1>
-  <img src= 'image/library.jpg'/>
+{% if instance_list %}
+  <ul>
 
-    <body>
-      {% block content %}
+  {% for book_instance in instance_list %}
+    <li>
+      <a href="{{instance_list.get_absolute_url}}"> {{ book_instance.book }}</a>
+    </li>
+  {% endfor %}
 
-        {% if instance_list %}
-          <ul>
-
-            {% for book_instance in instance_list %}
-              <li>
-                <a href="{{instance_list.get_absolute_url}}"> {{ book_instance.book }}</a>
-              </li>
-            {% endfor %}
-
-          </ul>
-        {% else %}
-        <p>There are no copies yet.</p>
-        {% endif %}
-      {% endblock %}
-
-    </body>
-
-  </header>
-</html>
+  </ul>
+{% else %}
+  <p>There are no copies yet.</p>
+{% endif %}
+{% endblock %}
