@@ -30,6 +30,10 @@ urlpatterns += [
     path('catalog/', include('catalog.urls')),
 ]
 
+urlpatterns += [
+    path('api/', include('catalog.api.urls')),
+]
+
 #urlpatterns += [
  #   path('', RedirectView.as_view(url='/catalog/', permanent=True)),
 #]
